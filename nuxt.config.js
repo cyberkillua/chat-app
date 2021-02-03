@@ -42,6 +42,23 @@ export default {
     '@nuxtjs/axios',
     // https://go.nuxtjs.dev/pwa
     '@nuxtjs/pwa',
+    [
+      '@nuxtjs/firebase',
+      {
+        config: {
+          apiKey: 'AIzaSyARRl8vPv3XPvSAPlswgv5xhFxdpVjkzWE',
+          authDomain: 'chatapp-b2fa3.firebaseapp.com',
+          databaseURL: 'https://chatapp-b2fa3.firebaseio.com/',
+          projectId: 'chatapp-b2fa3',
+          storageBucket: 'chatapp-b2fa3.appspot.com',
+          messagingSenderId: '233740198981',
+          appId: '1:233740198981:web:8c547df029475929e2ef2c',
+        },
+        services: {
+          firestore: true,
+        },
+      },
+    ],
   ],
 
   // Axios module configuration (https://go.nuxtjs.dev/config-axios)
@@ -51,7 +68,7 @@ export default {
   vuetify: {
     customVariables: ['~/assets/variables.scss'],
     theme: {
-      dark: true,
+      dark: false,
       themes: {
         dark: {
           primary: colors.blue.darken2,

@@ -2,8 +2,13 @@
   <v-container>
     <div>
       <!-- Login section -->
-      <v-card v-if="!name" id="logincard">
-        <p class="text-h3 text-center py-3 body-1">Join Chat</p>
+      <v-card flat v-if="!name" id="logincard">
+        <h1
+          class="my-4 text-center text-h5 grey--text text--lighten-1 font-weight-medium"
+        >
+          Welcome to the General Chat Room
+        </h1>
+        <p class="text-h6 text-center py-2 body-1">Join Chat</p>
         <label class="pl-4" for="username">Enter a Username</label>
         <br />
         <v-card-actions>
@@ -28,18 +33,21 @@
       </v-card>
 
       <div v-else class="message-body">
-        <h1 class="mb-4 text-center text-h3">ChatBox</h1>
-        <h4 class="my-4">Welcome {{ name }}!</h4>
+        <h4 class="ma-4 text-h5 grey--text text--lighten-1 font-weight-medium">
+          Welcome {{ name }}!
+        </h4>
         <div class="card">
           <div class="cardbody">
             <div
               v-for="message in messages"
               :key="message.time"
-              class="grey lighten-3 my-4 pa-2"
+              class="my-4 pa-2"
             >
-              <span class="mgtext text-uppercase">{{ message.username }}</span>
-              <p class="message">{{ message.text }}</p>
-              <p class="caption grey--text">
+              <span class="text-uppercase pa-3">{{ message.username }}</span>
+              <p class="message blue white--text pa-4 rounded-xl">
+                {{ message.text }}
+              </p>
+              <p class="caption px-3">
                 {{ new Date(message.time).toDateString() }} ,
                 {{
                   new Date(message.time).toLocaleTimeString('en-US', {
@@ -129,16 +137,13 @@ export default {
 #logincard {
   width: 40%;
   margin: auto;
-  margin-top: 100px;
+  margin-top: 40px;
 }
 .message-body {
   /* height: 80vh; */
-  margin: auto;
+  margin: 40px auto;
 }
-.mgtext {
-  color: rgb(0, 195, 255);
-  font-weight: bolder;
-}
+
 .message-text {
   min-width: 10%;
   border-radius: 4px;

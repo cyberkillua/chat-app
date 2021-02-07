@@ -1,13 +1,15 @@
 <template>
-  <Chatbox />
+  <div>
+    <Landingpage />
+  </div>
 </template>
 
 <script>
-import Chatbox from '~/components/Chatbox.vue'
-
+import Landingpage from './Landingpage'
 export default {
   components: {
-    Chatbox,
+    // Chatbox,
+    Landingpage,
   },
 }
 </script>
